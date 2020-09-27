@@ -9,8 +9,10 @@ DataFrame是Pandas用来表示高阶数据的数据结构
 可以采用分层索引表示更高维度的数据
 
 ## 声明（创建）
-### 用ndarray或Python字典构建
-#### 1.python字典
+
+用ndarray或Python字典构建
+
+### 1.python字典
 
     data = {'姓名':['张三','李四','王五','赵六'],'年龄':[17,28,19,20],'性别':['男','男','女','男']}
     frame = pd.DataFrame(data)
@@ -29,17 +31,17 @@ DataFrame是Pandas用来表示高阶数据的数据结构
     2	女	19	王五	NaN
     3	男	20	赵六	NaN
     
-#### 2.ndarray
+### 2.ndarray
 
     ndarray = np.random.randn(3,3)
     frame1 = pd.DataFrame(ndarray)
 
 pandas会自动分配索引，并按默认顺序排序
 
-#### 3.字典嵌套字典
+### 3.字典嵌套字典
 外层字典为列，内层字典为行元素
 
-#### 4.利用Series构造Frame
+### 4.利用Series构造Frame
 可以取现成的series构造新的Frame
     
 ## 操作
@@ -83,6 +85,7 @@ pandas会自动分配索引，并按默认顺序排序
     frame['体重']=weight
     
 结果
+
       性别	年龄	姓名	身高	体重
     0	男	17	张三	1.7	56
     1	男	28	李四	1.8	80
@@ -115,4 +118,3 @@ pandas会自动分配索引，并按默认顺序排序
 
     ser6 = frame['姓名'].copy()
 
-### 2.
