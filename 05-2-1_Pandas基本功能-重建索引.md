@@ -19,5 +19,16 @@ reindex返回一个新的数据数据对象，以参数索引排列
 
 ## DataFrame的列关键字重建索引
 
-    newDf = df.reindex(columns = list or ndarray)
-    
+reindex函数对于DataFrame的操作可以改变行索引、列索引，也可以同时改变
+
+默认reindex行索引
+
+    df1 = df.reindex(['c','d','b','a'])
+
+    df2 = df.reindex(['c','d','b','a'],columns=['A','B','C','D','E','F'])
+
+## loc索引标签
+
+也可用loc选取更改索引，但是不能自动新增NaN的行列值
+
+    df2.loc[['d','b','a'],['E','F','D']]
