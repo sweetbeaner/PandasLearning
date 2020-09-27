@@ -50,7 +50,7 @@ pandas会自动分配索引，并按默认顺序排序
 
 ### 2.取列的名称
     
-    frame.colums
+    frame.columns
     
     Index(['性别', '年龄', '姓名', '身高'], dtype='object')
     
