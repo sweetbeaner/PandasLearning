@@ -1,0 +1,26 @@
+NumPy的通用函数（逐元素数组方法）对Pandas对象也有效
+如
+  
+    np.abs(frame)
+
+## apply函数:逐行、列计算
+
+将一个功能逐项应用在一行或一列的一维数组上
+  
+    f = lambda x:x.max()-x.min()
+    frame.apply(f)
+默认为按列运行，取每一列的各行元素进行运算
+
+添加参数axis可改为按行运行，取同一行的每一列元素进行运算
+
+    frame.apple(f,axis='columns')
+
+## applymap函数:frame逐个元素计算
+
+    format = lambda函数定义
+    frame.applemap(format)
+    
+## map函数:series逐元素运算
+
+    format = lambda函数定义
+    ser.map(format)
