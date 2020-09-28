@@ -1,0 +1,9 @@
+# 排序
+
+用sort_index和sort_values分别对行或列的索引和值进行排序
+
+    ser1 = pd.Series(np.arange(6),index = [3,4,6,1,2,5])
+    ser1.sort_index()
+    
+    
+
