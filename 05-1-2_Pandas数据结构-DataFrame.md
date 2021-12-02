@@ -16,21 +16,21 @@ DataFrame是Pandas用来表示高阶数据的数据结构
 
     data = {'姓名':['张三','李四','王五','赵六'],'年龄':[17,28,19,20],'性别':['男','男','女','男']}
     frame = pd.DataFrame(data)
-    
+
 可以通过构造函数的参数指定属性顺序
 
     pd.DataFrame(data,columns=['性别','年龄','姓名'])
-    
+
 如果指定的colum没有在data中，则会出现缺失值
 
     frame = pd.DataFrame(data,columns=['性别','年龄','姓名','身高'])
-    
+
        性别	年龄	姓名	身高
     0	男	17	张三	NaN
     1	男	28	李四	NaN
     2	女	19	王五	NaN
     3	男	20	赵六	NaN
-    
+
 ### 2.ndarray
 
     ndarray = np.random.randn(3,3)
@@ -43,7 +43,7 @@ pandas会自动分配索引，并按默认顺序排序
 
 ### 4.利用Series构造Frame
 可以取现成的series构造新的Frame
-    
+
 ## 操作
 
 ### 1.取前5行数据
@@ -51,18 +51,18 @@ pandas会自动分配索引，并按默认顺序排序
     frame.head()
 
 ### 2.取列的名称
-    
+
     frame.columns
-    
+
     Index(['性别', '年龄', '姓名', '身高'], dtype='object')
-    
-   
+
+
 ### 3.按列检索
     frame['姓名']
-    
+
 ### 4.按行检索
     frame.loc[index]
-    
+
 ### 5.给某一列赋值
 给列赋值时
 
@@ -71,19 +71,19 @@ pandas会自动分配索引，并按默认顺序排序
 用Series给DataFrame赋值时，DataFrame的行会与Series的Index相匹配
 
     frame['身高'] = np.arange(4.0)
-    
+
 返回为Series对象，Series的Name属性为列名
 
     high = pd.Series([1.7,1.8,1.6],index = [0,1,2])
     frame['身高']=high
-    
+
 若此时index未指定，则默认为NaN值
 
 如果被赋值的列不存在，则会自动生成一个新列
 
     weight = pd.Series([56,80,55,70],index = [0,1,2,3])
     frame['体重']=weight
-    
+
 结果
 
       性别	年龄	姓名	身高	体重
@@ -107,7 +107,7 @@ pandas会自动分配索引，并按默认顺序排序
     frame.columns.name = '属性'
 
 ### 9.获取Frame的值
-    
+
     frame.values
 
 ## 特性
@@ -117,4 +117,3 @@ pandas会自动分配索引，并按默认顺序排序
 对选取的Frame对象的列构成的Series的操作是会修改Frame内容的，如果需要拷贝，应该使用copy方法
 
     ser6 = frame['姓名'].copy()
-
